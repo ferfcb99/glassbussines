@@ -1,6 +1,8 @@
 package com.quarkdev.inventoryservice.service.impl;
 
 import com.quarkdev.inventoryservice.dto.InventoryItemDto;
+import com.quarkdev.inventoryservice.entity.InventoryItem;
+import com.quarkdev.inventoryservice.mapper.InventoryServiceItemMapper;
 import com.quarkdev.inventoryservice.repository.InventoryItemRepository;
 import com.quarkdev.inventoryservice.service.InventoryItemService;
 import org.springframework.stereotype.Service;
@@ -16,6 +18,8 @@ public class InventoryItemServiceImpl implements InventoryItemService {
 
     @Override
     public InventoryItemDto getInventoryItemByProductVariantId(Long id) {
+        InventoryItem inventoryItem = this.inventoryItemRepository.getReferenceById(id);
 
+        return InventoryServiceItemMapper.toDto(inventoryItem);
     }
 }
