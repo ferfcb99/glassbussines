@@ -1,5 +1,6 @@
 package com.quarkdev.inventoryservice.service.impl;
 
+import com.quarkdev.inventoryservice.dto.ConsumeInventoryItemRequestDto;
 import com.quarkdev.inventoryservice.dto.InventoryItemDto;
 import com.quarkdev.inventoryservice.entity.InventoryItem;
 import com.quarkdev.inventoryservice.mapper.InventoryServiceItemMapper;
@@ -21,5 +22,13 @@ public class InventoryItemServiceImpl implements InventoryItemService {
         InventoryItem inventoryItem = this.inventoryItemRepository.getReferenceById(id);
 
         return InventoryServiceItemMapper.toDto(inventoryItem);
+    }
+
+    @Override
+    public String generateConsumptionOrReservation(ConsumeInventoryItemRequestDto consumeInventoryItemRequestDto) {
+        String outcome = "";
+
+
+        return outcome;
     }
 }
