@@ -31,5 +31,5 @@ spring:
       mode: always
 
 server:
-  port: ${SERVER_PORT:8080}
+  port: ${SERVER_PORT:8081}
 

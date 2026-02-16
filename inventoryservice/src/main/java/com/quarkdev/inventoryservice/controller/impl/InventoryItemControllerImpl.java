@@ -31,8 +31,11 @@ public class InventoryItemControllerImpl implements InventoryItemController {
     }
 
     @Override
+    @PostMapping(value = "/generate-consumption-or-reservation")
     public ResponseEntity<ResponseApiDto<String>> generateConsumptionOrReservation(
             @RequestBody ConsumeInventoryItemRequestDto consumeInventoryItemRequestDto) {
-        return null;
+        String outcome = inventoryItemService.generateConsumptionOrReservation(consumeInventoryItemRequestDto);
+        return ResponseEntity.status(HttpStatus.OK)
+                .body(new ResponseApiDto<>("", "", outcome));
     }
 }
